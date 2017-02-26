@@ -28,7 +28,7 @@ class BoxesController < ApplicationController
 
     respond_to do |format|
       if @box.save
-        format.html { redirect_to @box, notice: 'Box was successfully created.' }
+        format.html { redirect_to @box, notice: '新規データが作成されました' }
         format.json { render :show, status: :created, location: @box }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BoxesController < ApplicationController
   def update
     respond_to do |format|
       if @box.update(box_params)
-        format.html { redirect_to @box, notice: 'Box was successfully updated.' }
+        format.html { redirect_to @box, notice: 'データが更新されました' }
         format.json { render :show, status: :ok, location: @box }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BoxesController < ApplicationController
   def destroy
     @box.destroy
     respond_to do |format|
-      format.html { redirect_to boxes_url, notice: 'Box was successfully destroyed.' }
+      format.html { redirect_to boxes_url, notice: 'データを削除しました' }
       format.json { head :no_content }
     end
   end

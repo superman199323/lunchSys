@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderdate: 2017-02-18
+  member: one
+  box: one
+
+two:
+  orderdate: 2017-02-18
+  member: two
+  box: two
