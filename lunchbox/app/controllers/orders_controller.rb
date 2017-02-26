@@ -24,7 +24,11 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    if params['member_id']
+      @order = Order.new(member:Member.find(params[:member_id]))
+    else
+      @order = Order.new
+    end
   end
 
   # GET /orders/1/edit
