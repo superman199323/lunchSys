@@ -7,6 +7,16 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  #indexページに似たようなファイルを作成する
+  def yourindex
+    #getパラメータでデータを受け取る
+    member_id = params[:member][:id]
+    #「社員名簿」からIDが等しいものを取り出す
+    @member = Member.find(member_id)
+    #「注文一覧」から「注文者のid」がmemberであるものを探す
+    @orders = Order.where member_id: member_id
+  end
+
   # GET /orders/1
   # GET /orders/1.json
   def show

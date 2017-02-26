@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   #追加されたファイル
   get 'workmenu/index', as: :workmenu
 
+  #yourindexファイル
+  get 'orders/yourindex', to: 'orders#yourindex', as: :yourindex
+
   #必要なファイルを全て自動生成したとき
   resources :orders
   resources :members
